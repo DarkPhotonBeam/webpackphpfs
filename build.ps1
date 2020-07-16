@@ -9,4 +9,4 @@ Copy-Item -Path "./dist" -Destination './production' -Recurse
 #yarn install --production=true
 git add .
 git commit -m "Production Commit"
-#git push origin master
+git push origin master

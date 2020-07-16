@@ -6,7 +6,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 function fetchData() {
+    console.log('Fetching data...');
     $.post('/api/test.php', {test: 4}, (res) => {
+        console.log("Post request response:");
         console.log(res);
     });
 
@@ -24,5 +26,6 @@ function component() {
     return element;
 }
 
+console.log('INIT');
 fetchData();
 document.body.appendChild(component());

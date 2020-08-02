@@ -1,4 +1,6 @@
 import "./style.scss";
+import "./reset.scss";
+import "./script.js";
 import $ from 'jquery';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -25,6 +27,7 @@ function component() {
 
     return element;
 }
+
 
 console.log('INIT');
 fetchData();

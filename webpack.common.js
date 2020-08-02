@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { LoaderOptionsPlugin } = require('webpack');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
     entry: {
@@ -18,6 +19,13 @@ module.exports = {
             title: 'Webpack App',
             template: 'public/index.hbs'
         }),
+        new ImageminPlugin({
+            test: 'src/images/**',
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '95-100'
+            }
+        })
     ],
     output: {
         filename: '[name].bundle.js',
